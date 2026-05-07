@@ -1,6 +1,6 @@
 # Lojistik Yönetim Sistemi (Graf + Hash Tablosu Hibrit Yapı)
 
-Bu proje, **Veri Yapıları ve Algoritmalar Dersi Final Değerlendirme Ödevi-4** kapsamında geliştirilmiştir. Projenin amacı, bir lojistik firmasının şehirler arası bağlantılarını graf yapısı ile modellemek ve şehirlerdeki paket bilgilerine hızlıca sorgulanabilmesini sağlamak için hibrit bir veri yapısı sistemi kurmaktır.
+Bu proje, **Veri Yapıları ve Algoritmalar Dersi Final Değerlendirme ** kapsamında geliştirilmiştir. Projenin amacı, bir lojistik firmasının şehirler arası bağlantılarını graf yapısı ile modellemek ve şehirlerdeki paket bilgilerine hızlıca sorgulanabilmesini sağlamak için hibrit bir veri yapısı sistemi kurmaktır.
 
 ---
 
