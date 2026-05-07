@@ -1,14 +1,15 @@
 #include "graph.h"
 
-// Yeni bir graf düðümü oluþtur
+// Yeni bir graf dÃ¼gÃ¼mÃ¼ olustur
 Node* createNode(int v) {
     Node* newNode = (Node*)malloc(sizeof(Node));
+    printf("[GRAF ANALIZI] Sehir %d dugumu olusturuldu. Bellek Adresi: %p\n", v, (void*)newNode);
     newNode->cityID = v;
     newNode->next = NULL;
     return newNode;
 }
 
-// Grafý oluþtur
+// Grafy olustur
 Graph* createGraph(int cities) {
     Graph* graph = (Graph*)malloc(sizeof(Graph));
     graph->numCities = cities;
@@ -20,14 +21,14 @@ int i;
     return graph;
 }
 
-// Baðlantý (Kenar) ekle (Yönsüz)
+// BaÄŸlantÄ± (Kenar) ekle 
 void addEdge(Graph* graph, int src, int dest) {
     // Kaynaktan hedefe
     Node* newNode = createNode(dest);
     newNode->next = graph->adjLists[src];
     graph->adjLists[src] = newNode;
 
-    // Hedef'ten kaynaða (Yönsüz graf)
+    // Hedef'ten kaynaÄŸa 
     newNode = createNode(src);
     newNode->next = graph->adjLists[dest];
     graph->adjLists[dest] = newNode;
