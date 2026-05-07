@@ -15,20 +15,21 @@ void initHashTable(Package** table, int size) {
 // Yeni paket ekleme (Zincirleme)
 void insertPackage(Package** table, int size, int id, char* content) {
     int index = hashFunction(id, size);
-    
     Package* newPack = (Package*)malloc(sizeof(Package));
     if (newPack == NULL) {
         printf("Hata: Bellek ayrilamadi!\n");
         return;
     }
+    printf("\n[BELLEK ANALIZI] Paket ID %d icin Heap'te yer ayrildi: %p\n", id, (void*)newPack);
+printf("[POINTER ANALIZI] Bu paket index %d'ye baglaniyor. Onceki 'next' adresi: %p\n", index, (void*)table[index]);
     newPack->id = id;
     strcpy(newPack->content, content);
     
-    // Baþa ekleme (LIFO)
+    // Ba?a ekleme (LIFO)
     newPack->next = table[index]; 
     table[index] = newPack;
     
-    // Rapor için adresleri yazdýr
+    // Rapor iÃ§in adresleri yazdyr
     printf("Paket %d, Bellek Adresi: %p, Sonraki: %p adresine eklendi (Index: %d).\n", 
            id, (void*)newPack, (void*)newPack->next, index);
 }
@@ -56,7 +57,7 @@ void displayHashTable(Package** table, int size) {
             printf("NULL\n");
         } else {
             while (current != NULL) {
-                printf("(ID: %d | Adres: %p) -> ", current->id, (void*)current);
+                printf("(ID: %d | Adres: %p | next: %p) -> ", current->id, (void*)current, (void*)current->next);
                 current = current->next;
             }
             printf("NULL\n");
